@@ -9,10 +9,10 @@ and containerised service architecture.
 
 ---
 
-## Project Structure
+```
 data-analysis_with_docker/
 │
-├── notebooks/                        # Exploratory analysis
+├── notebooks/                        
 │   ├── 01_data_exploration.ipynb     # Data ingestion and visual inspection
 │   ├── 02_timeseries_analysis.ipynb  # Stationarity testing and decomposition
 │   ├── 03_correlation_analysis.ipynb # Static, rolling, and cross-correlation
@@ -26,6 +26,7 @@ data-analysis_with_docker/
 ├── data/                             # Shared volume — CSVs and results.json
 ├── docker-compose.yml
 └── README.md
+```
 ---
 
 ## Quickstart
