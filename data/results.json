@@ -1,0 +1,98 @@
+{
+  "stationarity": [
+    {
+      "series": "SpotPriceEUR",
+      "adf_stat": -5.3571,
+      "adf_p": 0.0,
+      "kpss_stat": 0.2587,
+      "kpss_p": 0.1,
+      "verdict": "stationary"
+    },
+    {
+      "series": "OffshoreWind",
+      "adf_stat": -6.8961,
+      "adf_p": 0.0,
+      "kpss_stat": 0.9851,
+      "kpss_p": 0.01,
+      "verdict": "inconclusive"
+    },
+    {
+      "series": "OnshoreWind",
+      "adf_stat": -5.8713,
+      "adf_p": 0.0,
+      "kpss_stat": 0.5641,
+      "kpss_p": 0.0272,
+      "verdict": "inconclusive"
+    },
+    {
+      "series": "Solar",
+      "adf_stat": -5.8778,
+      "adf_p": 0.0,
+      "kpss_stat": 0.8425,
+      "kpss_p": 0.01,
+      "verdict": "inconclusive"
+    }
+  ],
+  "correlation": [
+    {
+      "variable": "OffshoreWind",
+      "raw_r": -0.126,
+      "differenced_r": 0.0678
+    },
+    {
+      "variable": "OnshoreWind",
+      "raw_r": -0.4769,
+      "differenced_r": -0.1676
+    },
+    {
+      "variable": "Solar",
+      "raw_r": -0.4048,
+      "differenced_r": -0.4039
+    }
+  ],
+  "granger": [
+    {
+      "pair": "OffshoreWind\u2192Price",
+      "first_sig_lag": 1,
+      "min_p_value": 1e-06,
+      "n_sig_lags": 24,
+      "bidirectional": true
+    },
+    {
+      "pair": "OnshoreWind\u2192Price",
+      "first_sig_lag": 2,
+      "min_p_value": 0.0,
+      "n_sig_lags": 23,
+      "bidirectional": true
+    },
+    {
+      "pair": "Solar\u2192Price",
+      "first_sig_lag": 1,
+      "min_p_value": 0.0,
+      "n_sig_lags": 24,
+      "bidirectional": true
+    },
+    {
+      "pair": "Price\u2192OffshoreWind",
+      "first_sig_lag": 4,
+      "min_p_value": 0.0,
+      "n_sig_lags": 10,
+      "bidirectional": true
+    },
+    {
+      "pair": "Price\u2192OnshoreWind",
+      "first_sig_lag": 1,
+      "min_p_value": 0.0,
+      "n_sig_lags": 24,
+      "bidirectional": true
+    },
+    {
+      "pair": "Price\u2192Solar",
+      "first_sig_lag": 2,
+      "min_p_value": 0.0,
+      "n_sig_lags": 22,
+      "bidirectional": true
+    }
+  ],
+  "var_optimal_lag": 24
+}

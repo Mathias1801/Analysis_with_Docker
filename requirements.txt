@@ -1,0 +1,16 @@
+# Data
+requests==2.31.0
+pandas==2.2.0
+numpy==1.26.4
+
+# Statistics
+statsmodels==0.14.1
+scipy==1.13.0
+
+# API
+fastapi==0.111.0
+uvicorn==0.29.0
+
+# Notebooks
+jupyter==1.0.0
+matplotlib==3.8.4

@@ -1,0 +1,27 @@
+name: data-analysis_with_docker
+
+services:
+
+  ingestion:
+    build: ./services/ingestion
+    volumes:
+      - ./data:/app/../../data
+    restart: "no"          # runs once and exits
+
+  analysis:
+    build: ./services/analysis
+    volumes:
+      - ./data:/app/../../data
+    depends_on:
+      - ingestion
+    restart: "no"          # runs once after ingestion exits
+
+  api:
+    build: ./services/api
+    volumes:
+      - ./data:/app/../../data
+    ports:
+      - "8000:8000"
+    depends_on:
+      - analysis
+    restart: unless-stopped  # stays running
